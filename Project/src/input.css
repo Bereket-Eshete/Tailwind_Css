@@ -1,11 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer utilities {
   .section-min-height {
-    min-height: calc(100vh -68px);
+    min-height: calc(100vh - 68px);
   }
   .toggle-btn {
     @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg];
   }
+}
+/* Hamburger Menu Icon Styles */
+#hamburger-button {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+#hamburger-button div {
+  position: absolute;
+  left: 4px;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+#hamburger-button div:nth-child(1) {
+  top: 10px;
+}
+
+#hamburger-button div:nth-child(2) {
+  top: 15px;
+}
+
+#hamburger-button div:nth-child(3) {
+  top: 20px;
+}
+
+/* X Transformation */
+#hamburger-button.open div:nth-child(1) {
+  transform: rotate(45deg);
+  top: 15px;
+}
+
+#hamburger-button.open div:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-button.open div:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 15px;
 }
